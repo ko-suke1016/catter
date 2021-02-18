@@ -18,3 +18,7 @@ twitterを利用した簡単ブログ作成アプリです。
 ### マーケット
 
 猫を飼っている情報リテラシーの低い主婦。というか母。
+
+### ER図
+
+[![Image from Gyazo](https://i.gyazo.com/08bc42ead296656ad69a016e0137a8fe.png)](https://gyazo.com/08bc42ead296656ad69a016e0137a8fe)
