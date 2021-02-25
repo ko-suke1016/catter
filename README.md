@@ -21,4 +21,4 @@ twitterを利用した簡単ブログ作成アプリです。
 
 ### ER図
 
-[![Image from Gyazo](https://i.gyazo.com/08bc42ead296656ad69a016e0137a8fe.png)](https://gyazo.com/08bc42ead296656ad69a016e0137a8fe)
+[![Image from Gyazo](https://i.gyazo.com/d51157ab116ed902981fa3a46727b8ff.png)](https://gyazo.com/d51157ab116ed902981fa3a46727b8ff)
