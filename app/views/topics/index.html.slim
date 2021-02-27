@@ -1,0 +1,40 @@
+.row
+  .mx-auto
+    h1 投稿一覧
+
+.row
+  .mx-auto
+    = search_form_for @q, url: topics_path do |f|
+      .form-group
+        = f.label :title
+        = f.search_field :title_cont, class: 'form-control'
+      .form-group
+        = f.label :created_at
+        = f.date_field :created_at_gteq, class: 'form-control'
+      = '~'
+      .form-group
+        = f.date_field :created_at_lteq, class: 'form-control'
+        = f.submit '検索', class: 'btn btn-info'
+
+.container
+  .row
+    - @topics.each do |topic|
+      .col-md-4
+        .card.border-info.mb-3 style="width: 18rem;"
+          - if topic.image.present?
+            = image_tag topic.image.url
+            .card-body
+              h4.card-title
+                = topic.title
+              p.card-text
+                = topic.body
+              .btn.btn-warning
+                = link_to '削除', topic_path(topic), method: :delete
+
+.row
+  .mx-auto
+    = paginate @topics
+
+.row
+  .mx-auto.btn.btn-warning
+    = link_to '新規投稿', new_topic_path

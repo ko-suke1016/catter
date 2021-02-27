@@ -1,0 +1,21 @@
+.row
+  .mx-auto
+    h1 新規投稿
+
+.row
+  .mx-auto
+    = form_with model: @topic do |f|
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+      .form-group
+        = f.label :body
+        = f.text_field :body, class: 'form-control'
+      .form-group
+        = f.label :image
+        = f.file_field :image, id: 'user_img', class: 'form-control'
+      = f.submit '登録', class: "btn btn-info"
+
+.row
+  .mx-auto.btn.btn-warning
+    = link_to '投稿一覧', topics_path

@@ -1,0 +1,42 @@
+// Place all the styles related to the catchers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//header
+.header-4 {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1024px;
+    height: 60px;
+    padding: 0 0.8em;
+    margin: 0 auto;
+    font-size: 1.2em;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-nav-item {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+  }
+
+  .logo img {
+    width: 70px;
+  }
+
+  .header-avatar {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
