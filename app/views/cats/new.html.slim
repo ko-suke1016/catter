@@ -1,0 +1,20 @@
+.row
+  .mx-auto
+    h1 ネコ登録
+
+.row
+  .mx-auto
+    = form_with model: @cat do |f|
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control'
+      .form-group
+        = f.label :age
+        = f.select :age, options_for_select((1..25).to_a), class: 'form-control'
+      .form-group
+        = f.label :sex
+        = f.select :sex, ['男の子', '女の子'], {include_blank: '性別を選んでね'}, class: 'form-control'
+      .form-group
+        = f.label :image
+        = f.file_field :cat_img, class: 'form-control'
+      = f.submit '登録', class: "btn btn-info"

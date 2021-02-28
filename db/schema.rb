@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_093850) do
+ActiveRecord::Schema.define(version: 2021_02_27_103811) do
+
+  create_table "cats", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "age", null: false
+    t.string "sex", null: false
+    t.string "cat_img", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_cats_on_user_id"
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string "title", limit: 30, null: false

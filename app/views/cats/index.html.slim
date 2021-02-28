@@ -1,0 +1,26 @@
+.row
+  .mx-auto
+      h1 ネコ一覧
+
+.row
+  .mx-auto
+    .container
+      .row
+        - @cats.each do |cat|
+          .col-md-4
+            .card.border-info.mb-3 style="width: 18rem;"
+              - if cat.cat_img.present?
+                = image_tag cat.cat_img.url
+                .card-body
+                  h4.card-title
+                    = cat.name
+                  p.card-body
+                    飼い主      #{{cat.user.name}}
+                  .btn.btn-warning
+                    = link_to '削除', cat_path(cat), method: :delete
+                  .btn.btn-outline-warning
+                    = link_to '詳細', cat_path(cat)
+
+.row
+  .mx-auto.btn.btn-warning
+    = link_to 'ネコ登録', new_cat_path
