@@ -1,24 +1,29 @@
 class ContentsController < ApplicationController
   def index
-    @contents = Content.all.includes(:cat)
+    @cat = Cat.find(params[:cat_id])
+    @contents = @cat.contents.all
   end
 
   def new
-    @content = Content.new
+    @cat = Cat.find(params[:cat_id])
+    @content = @cat.contents.new
   end
 
   def show
-    @content = Content.find(params[:id])
+    @cat = Cat.find(params[:cat_id])
+    @content = @cat.contents.find(params[:id])
   end
 
   def create
-    @content = Content.new(content_params)
+    @cat = Cat.find(params[:cat_id])
+    @content = @cat.contents.build(content_params)
+    @content.user_id = current_user.id
     if @content.save
       flash[:notice] = '日記の投稿に成功したにゃ♪'
-      redirect_to contents_path
+      redirect_to cat_contents_path(@cat)
     else
       flash[:danger] = '日記の投稿に失敗したにゃ。。'
-      render new_content_path
+      redirect_to new_cat_content_path(@cat)
     end
   end
 
@@ -31,7 +36,7 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:title, :unp, :weight, :body, :eat, :content_img)
+    params.require(:content).permit(:title, :unp, :weight, :body, :eat, :content_img, :start_time)
   end
 
 end

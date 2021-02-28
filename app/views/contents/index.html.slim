@@ -4,7 +4,8 @@ h1 日記投稿カレンダー
   = date.day
 
   - contents.each do |content|
-      = link_to blog.title, blog
+    div
+      = link_to content.title, cat_content_path(content.cat_id, content)
 
 .row
   .mx-auto.btn.btn-warning

@@ -4,6 +4,7 @@ class Content < ApplicationRecord
     validates :content_img, presence: true
 
     belongs_to :cat
+    belongs_to :user
 
     mount_uploader :content_img, ImageUploader
 end

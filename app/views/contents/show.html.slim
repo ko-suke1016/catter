@@ -1,0 +1,26 @@
+.row
+  .mx-auto
+    h1 ネコ日記詳細
+
+
+.row
+  .mx-auto
+    .container
+      .rows
+          .col-md-4
+            .card.border-info.mb-3 style="width: 18rem;"
+              - if @content.content_img.present?
+                = image_tag @content.content_img.url
+                .card-body
+                  h4.card-title
+                    = @content.title
+                  p
+                    うんちの回数      #{{@content.unp}}回
+                  p
+                    ご飯の量  #{{@content.eat}}g
+                  p
+                    体重　#{{@content.weight}}
+                  p
+                    一言  #{{@content.body}}
+                  .btn.btn-outline-warning
+                    = link_to '日記一覧', cat_contents_path(@content.cat_id)

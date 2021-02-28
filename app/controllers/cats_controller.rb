@@ -8,6 +8,7 @@ class CatsController < ApplicationController
   end
 
   def create
+
     @cat = current_user.cats.build(cat_params)
     if @cat.save
       flash[:notice] = 'ネコ情報の登録に成功しました！！'

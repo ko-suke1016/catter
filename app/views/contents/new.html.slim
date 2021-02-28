@@ -4,7 +4,7 @@
 
 .row
   .mx-auto
-    = form_with model: @content, local: true do |f|
+    = form_with model: [@cat,@content], local: true do |f|
       .form-group
         = f.label :title
         = f.text_field :title, class: 'form-control'
@@ -21,6 +21,13 @@
         = f.label :body
         = f.text_field :body, class: 'form-control'
       .form-group
+        = f.label :start_time
+        = f.datetime_select :start_time, class: 'form-control'
+      .form-group
         = f.label :content_img
         = f.file_field :content_img, class: 'form-control'
       = f.submit '登録', class: "btn btn-info"
+
+.row
+  .mx-auto.btn.btn-warning
+    = link_to '日記一覧', cat_contents_path(@content.cat_id)
