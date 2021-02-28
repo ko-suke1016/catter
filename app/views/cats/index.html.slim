@@ -14,8 +14,12 @@
                 .card-body
                   h4.card-title
                     = cat.name
-                  p.card-body
+                  p
                     飼い主      #{{cat.user.name}}
+                  p
+                    年齢  #{{cat.age}}
+                  p
+                    性別　#{{cat.sex}}
                   .btn.btn-warning
                     = link_to '削除', cat_path(cat), method: :delete
                   .btn.btn-outline-warning
