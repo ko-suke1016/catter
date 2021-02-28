@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   post '/login' => 'user_sessions#create'
   post '/logout' => 'user_sessions#destroy'
   resources :users
-  resources :cats
-  resources :topics
+  resources :cats do
+    resources :contents
+  end
   root to: 'catchers#new'
   end

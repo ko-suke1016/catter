@@ -1,0 +1,11 @@
+h1 日記投稿カレンダー
+
+= month_calendar events: @contents do |date, contents|
+  = date.day
+
+  - contents.each do |content|
+      = link_to blog.title, blog
+
+.row
+  .mx-auto.btn.btn-warning
+    = link_to 'ネコ日記新規投稿', new_cat_content_path(@cat)

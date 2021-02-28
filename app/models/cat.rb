@@ -5,5 +5,7 @@ class Cat < ApplicationRecord
 
     belongs_to :user
 
+    has_many :contents, dependent: :destroy
+
     mount_uploader :cat_img, ImageUploader
 end

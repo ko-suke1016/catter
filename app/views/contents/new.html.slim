@@ -1,0 +1,26 @@
+.row
+  .mx-auto
+    h1 今日のネコ日記
+
+.row
+  .mx-auto
+    = form_with model: @content, local: true do |f|
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+      .form-group
+        = f.label :unp
+        = f.select :unp, options_for_select((1..6).to_a), class: 'form-control'
+      .form-group
+        = f.label :eat
+        = f.select :eat, options_for_select((0..100).to_a), class: 'form-control'
+      .form-group
+        = f.label :weight
+        = f.select :weight, options_for_select((200..500).to_a), class: 'form-control'
+      .form-group
+        = f.label :body
+        = f.text_field :body, class: 'form-control'
+      .form-group
+        = f.label :content_img
+        = f.file_field :content_img, class: 'form-control'
+      = f.submit '登録', class: "btn btn-info"

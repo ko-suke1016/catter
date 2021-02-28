@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_103811) do
+ActiveRecord::Schema.define(version: 2021_02_28_031819) do
 
   create_table "cats", force: :cascade do |t|
     t.string "name", null: false
@@ -23,14 +23,17 @@ ActiveRecord::Schema.define(version: 2021_02_27_103811) do
     t.index ["user_id"], name: "index_cats_on_user_id"
   end
 
-  create_table "topics", force: :cascade do |t|
-    t.string "title", limit: 30, null: false
-    t.text "body", limit: 200, null: false
+  create_table "contents", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "weight"
+    t.integer "unp"
+    t.integer "eat"
+    t.text "body", null: false
+    t.string "content_img", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.string "image"
-    t.index ["user_id"], name: "index_topics_on_user_id"
+    t.integer "cat_id"
+    t.index ["cat_id"], name: "index_contents_on_cat_id"
   end
 
   create_table "users", force: :cascade do |t|
