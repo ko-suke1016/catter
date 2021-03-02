@@ -22,7 +22,7 @@
         = f.text_field :body, class: 'form-control'
       .form-group
         = f.label :start_time
-        = f.datetime_select :start_time, class: 'form-control'
+        = f.date_select :start_time, class: 'form-control', use_month_numbers: true
       .form-group
         = f.label :content_img
         = f.file_field :content_img, class: 'form-control'

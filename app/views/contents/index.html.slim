@@ -1,4 +1,6 @@
-h1 日記投稿カレンダー
+.row
+  .mx-auto
+    h1 ネコ日記カレンダー🐈
 
 = month_calendar events: @contents do |date, contents|
   = date.day
@@ -10,3 +12,30 @@ h1 日記投稿カレンダー
 .row
   .mx-auto.btn.btn-warning
     = link_to 'ネコ日記新規投稿', new_cat_content_path(@cat)
+
+.row
+  .mx-auto
+    h1 うんちの回数遷移
+<canvas id="myChartUnp", width="400" height="400"></canvas>
+javascript:
+  var graphdays = #{{@dayline}}, graphunps = #{{@dayunp}};
+javascript:
+  draw_graph();
+
+.row
+  .mx-auto
+    h1 ご飯の回数遷移
+<canvas id="myChartEat", width="400" height="400"></canvas>
+javascript:
+  var graphdays = #{{@dayline}}, grapheats = #{{@dayeat}};
+javascript:
+  draw_graph();
+
+.row
+  .mx-auto
+    h1 体重の遷移
+<canvas id="myChartWeight", width="400" height="400"></canvas>
+javascript:
+  var graphdays = #{{@dayline}}, graphweights = #{{@dayweight}};
+javascript:
+  draw_graph();
